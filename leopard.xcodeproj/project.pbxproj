@@ -15,6 +15,10 @@
 		0A3C250520048E7B00CD6FD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C250320048E7B00CD6FD0 /* LaunchScreen.storyboard */; };
 		0A3C251020048E7B00CD6FD0 /* leopardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C250F20048E7B00CD6FD0 /* leopardTests.swift */; };
 		0A3C251B20048E7B00CD6FD0 /* leopardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C251A20048E7B00CD6FD0 /* leopardUITests.swift */; };
+		0A61A9212004CD5200302336 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; };
+		0A61A9222004CD5200302336 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91D2004CD4100302336 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0A61A9232004CD5200302336 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91E2004CD4100302336 /* SwiftyJSON.framework */; };
+		0A61A9242004CD5200302336 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A61A91E2004CD4100302336 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0A61A9252004CD5200302336 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0A61A9242004CD5200302336 /* SwiftyJSON.framework in Embed Frameworks */,
+				0A61A9222004CD5200302336 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0A3C24F420048E7B00CD6FD0 /* leopard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leopard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3C24F720048E7B00CD6FD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +68,8 @@
 		0A3C251620048E7B00CD6FD0 /* leopardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leopardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3C251A20048E7B00CD6FD0 /* leopardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leopardUITests.swift; sourceTree = "<group>"; };
 		0A3C251C20048E7B00CD6FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A61A91D2004CD4100302336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		0A61A91E2004CD4100302336 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A61A9232004CD5200302336 /* SwiftyJSON.framework in Frameworks */,
+				0A61A9212004CD5200302336 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +122,7 @@
 		0A3C24F620048E7B00CD6FD0 /* leopard */ = {
 			isa = PBXGroup;
 			children = (
+				0A61A91C2004CCFD00302336 /* Vendor */,
 				0A3C2528200491D300CD6FD0 /* Main */,
 				0A3C2529200491DF00CD6FD0 /* ViewController */,
 				0A3C250120048E7B00CD6FD0 /* Assets.xcassets */,
@@ -184,6 +208,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		0A61A91C2004CCFD00302336 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				0A61A91D2004CD4100302336 /* Alamofire.framework */,
+				0A61A91E2004CD4100302336 /* SwiftyJSON.framework */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +227,7 @@
 				0A3C24F020048E7B00CD6FD0 /* Sources */,
 				0A3C24F120048E7B00CD6FD0 /* Frameworks */,
 				0A3C24F220048E7B00CD6FD0 /* Resources */,
+				0A61A9252004CD5200302336 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -489,6 +523,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S4W89B5KZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = leopard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.leopard;
@@ -504,6 +542,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S4W89B5KZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = leopard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.leopard;
