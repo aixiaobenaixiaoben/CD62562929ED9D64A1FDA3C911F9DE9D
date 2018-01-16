@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A09D577200CE700000C487E /* RegisterApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D576200CE700000C487E /* RegisterApplyViewController.swift */; };
+		0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D578200CE724000C487E /* RegisterCodeViewController.swift */; };
+		0A09D57B200CE74D000C487E /* RegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D57A200CE74D000C487E /* RegisterInfoViewController.swift */; };
+		0A09D57D200CE767000C487E /* RegisterEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D57C200CE767000C487E /* RegisterEndViewController.swift */; };
+		0A09D57F200CE788000C487E /* ResetApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D57E200CE788000C487E /* ResetApplyViewController.swift */; };
+		0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D580200CE79C000C487E /* ResetCodeViewController.swift */; };
+		0A09D583200CE7C2000C487E /* ResetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D582200CE7C2000C487E /* ResetInfoViewController.swift */; };
+		0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D584200CE878000C487E /* ResetEndViewController.swift */; };
 		0A3C24F820048E7B00CD6FD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C24F720048E7B00CD6FD0 /* AppDelegate.swift */; };
 		0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C24F920048E7B00CD6FD0 /* ViewController.swift */; };
 		0A3C24FD20048E7B00CD6FD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C24FB20048E7B00CD6FD0 /* Main.storyboard */; };
@@ -62,6 +70,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A09D576200CE700000C487E /* RegisterApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApplyViewController.swift; sourceTree = "<group>"; };
+		0A09D578200CE724000C487E /* RegisterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCodeViewController.swift; sourceTree = "<group>"; };
+		0A09D57A200CE74D000C487E /* RegisterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfoViewController.swift; sourceTree = "<group>"; };
+		0A09D57C200CE767000C487E /* RegisterEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEndViewController.swift; sourceTree = "<group>"; };
+		0A09D57E200CE788000C487E /* ResetApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetApplyViewController.swift; sourceTree = "<group>"; };
+		0A09D580200CE79C000C487E /* ResetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCodeViewController.swift; sourceTree = "<group>"; };
+		0A09D582200CE7C2000C487E /* ResetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetInfoViewController.swift; sourceTree = "<group>"; };
+		0A09D584200CE878000C487E /* ResetEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetEndViewController.swift; sourceTree = "<group>"; };
 		0A3C24F420048E7B00CD6FD0 /* leopard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leopard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3C24F720048E7B00CD6FD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A3C24F920048E7B00CD6FD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +353,14 @@
 			isa = PBXGroup;
 			children = (
 				0ADECD1E2008450300FFCA73 /* LoginViewController.swift */,
+				0A09D576200CE700000C487E /* RegisterApplyViewController.swift */,
+				0A09D578200CE724000C487E /* RegisterCodeViewController.swift */,
+				0A09D57A200CE74D000C487E /* RegisterInfoViewController.swift */,
+				0A09D57C200CE767000C487E /* RegisterEndViewController.swift */,
+				0A09D57E200CE788000C487E /* ResetApplyViewController.swift */,
+				0A09D580200CE79C000C487E /* ResetCodeViewController.swift */,
+				0A09D582200CE7C2000C487E /* ResetInfoViewController.swift */,
+				0A09D584200CE878000C487E /* ResetEndViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -499,14 +523,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ADECD1F2008450300FFCA73 /* LoginViewController.swift in Sources */,
+				0A09D57D200CE767000C487E /* RegisterEndViewController.swift in Sources */,
 				0ADAE3692005D1AF006CB2DE /* Syusrinf.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
 				0ADAE3672005B764006CB2DE /* Response.swift in Sources */,
+				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
+				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,
 				0A3C250020048E7B00CD6FD0 /* leopard.xcdatamodeld in Sources */,
 				0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */,
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
+				0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */,
 				0ADECD21200849B400FFCA73 /* HomeViewController.swift in Sources */,
+				0A09D583200CE7C2000C487E /* ResetInfoViewController.swift in Sources */,
 				0A4E3EA2200B680F00D1B685 /* CViewController.swift in Sources */,
+				0A09D57B200CE74D000C487E /* RegisterInfoViewController.swift in Sources */,
+				0A09D577200CE700000C487E /* RegisterApplyViewController.swift in Sources */,
+				0A09D57F200CE788000C487E /* ResetApplyViewController.swift in Sources */,
 				0A3C24F820048E7B00CD6FD0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

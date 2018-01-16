@@ -59,3 +59,9 @@ class ViewController: UIViewController {
 
 }
 
+//temp extension
+extension UIViewController {
+    @IBAction func close(_ sendor: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
