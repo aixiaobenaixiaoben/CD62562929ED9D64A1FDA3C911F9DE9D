@@ -10,6 +10,8 @@ import UIKit
 
 class ResetApplyViewController: UIViewController {
     
+    var syusrinf: Syusrinf!
+    
     @IBAction func loadResetCodeView(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
         let resetCodeViewController = storyBoard.instantiateViewController(withIdentifier: "ResetCodeViewController") as! ResetCodeViewController

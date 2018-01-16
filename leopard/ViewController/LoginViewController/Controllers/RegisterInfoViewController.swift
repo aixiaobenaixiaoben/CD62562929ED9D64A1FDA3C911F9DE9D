@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterInfoViewController: UIViewController {
     
+    var syusrinf: Syusrinf!
+    
     @IBAction func loadRegisterEndView(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
         let registerEndViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterEndViewController") as! RegisterEndViewController

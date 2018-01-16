@@ -69,14 +69,6 @@ class Response<T: HandyJSON>: HandyJSON {
 }
 
 
-extension String: HandyJSON {}
-
-extension Array: HandyJSON {}
-
-
-
-
-
 
 
 

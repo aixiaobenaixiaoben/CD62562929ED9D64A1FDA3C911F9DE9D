@@ -15,6 +15,8 @@
 		0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D580200CE79C000C487E /* ResetCodeViewController.swift */; };
 		0A09D583200CE7C2000C487E /* ResetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D582200CE7C2000C487E /* ResetInfoViewController.swift */; };
 		0A09D585200CE878000C487E /* ResetEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A09D584200CE878000C487E /* ResetEndViewController.swift */; };
+		0A20200E200E4368009941EF /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20200D200E4368009941EF /* ExtensionString.swift */; };
+		0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20200F200E43DC009941EF /* ExtensionArray.swift */; };
 		0A3C24F820048E7B00CD6FD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C24F720048E7B00CD6FD0 /* AppDelegate.swift */; };
 		0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C24F920048E7B00CD6FD0 /* ViewController.swift */; };
 		0A3C24FD20048E7B00CD6FD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C24FB20048E7B00CD6FD0 /* Main.storyboard */; };
@@ -78,6 +80,9 @@
 		0A09D580200CE79C000C487E /* ResetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCodeViewController.swift; sourceTree = "<group>"; };
 		0A09D582200CE7C2000C487E /* ResetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetInfoViewController.swift; sourceTree = "<group>"; };
 		0A09D584200CE878000C487E /* ResetEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetEndViewController.swift; sourceTree = "<group>"; };
+		0A202008200E3F2A009941EF /* leopard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "leopard-Bridging-Header.h"; sourceTree = "<group>"; };
+		0A20200D200E4368009941EF /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		0A20200F200E43DC009941EF /* ExtensionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
 		0A3C24F420048E7B00CD6FD0 /* leopard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leopard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3C24F720048E7B00CD6FD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A3C24F920048E7B00CD6FD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				0ADAE3662005B764006CB2DE /* Response.swift */,
+				0A202008200E3F2A009941EF /* leopard-Bridging-Header.h */,
+				0A20200D200E4368009941EF /* ExtensionString.swift */,
+				0A20200F200E43DC009941EF /* ExtensionArray.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -525,10 +533,12 @@
 				0ADECD1F2008450300FFCA73 /* LoginViewController.swift in Sources */,
 				0A09D57D200CE767000C487E /* RegisterEndViewController.swift in Sources */,
 				0ADAE3692005D1AF006CB2DE /* Syusrinf.swift in Sources */,
+				0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
 				0ADAE3672005B764006CB2DE /* Response.swift in Sources */,
 				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
 				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,
+				0A20200E200E4368009941EF /* ExtensionString.swift in Sources */,
 				0A3C250020048E7B00CD6FD0 /* leopard.xcdatamodeld in Sources */,
 				0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */,
 				0A3C24FA20048E7B00CD6FD0 /* ViewController.swift in Sources */,
@@ -705,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S4W89B5KZ;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -715,6 +726,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.leopard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "leopard/Main/leopard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.4;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -724,6 +737,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S4W89B5KZ;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -734,6 +748,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forfreedomandlove.leopard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "leopard/Main/leopard-Bridging-Header.h";
 				SWIFT_VERSION = 3.4;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

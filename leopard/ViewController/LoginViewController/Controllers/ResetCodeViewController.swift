@@ -10,6 +10,8 @@ import UIKit
 
 class ResetCodeViewController: UIViewController {
     
+    var syusrinf: Syusrinf!
+    
     @IBAction func loadResetInfoView(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
         let resetInfoViewController = storyBoard.instantiateViewController(withIdentifier: "ResetInfoViewController") as! ResetInfoViewController

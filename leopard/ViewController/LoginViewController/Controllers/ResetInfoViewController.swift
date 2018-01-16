@@ -10,6 +10,8 @@ import UIKit
 
 class ResetInfoViewController: UIViewController {
     
+    var syusrinf: Syusrinf!
+    
     @IBAction func loadResetEndView(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
         let resetEndViewController = storyBoard.instantiateViewController(withIdentifier: "ResetEndViewController") as! ResetEndViewController

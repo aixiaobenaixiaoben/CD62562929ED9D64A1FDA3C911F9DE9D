@@ -9,6 +9,8 @@
 import UIKit
 
 class RegisterApplyViewController: UIViewController {
+    
+    var syusrinf: Syusrinf!
 
     @IBAction func loadRegisterCodeVIew(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
