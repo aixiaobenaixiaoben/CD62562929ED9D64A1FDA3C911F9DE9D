@@ -11,4 +11,12 @@ import UIKit
 class ResetEndViewController: UIViewController {
 
 
+    @IBAction func backToLogIn(_ sender: UIButton) {
+        var rootVC = self.presentingViewController!
+        while !rootVC.isKind(of: LoginViewController.self), let parent = rootVC.presentingViewController {
+            rootVC = parent
+        }
+        rootVC.dismiss(animated: true, completion: nil)
+    }
+    
 }

@@ -36,5 +36,11 @@ extension String: HandyJSON {
         let regexPassword = NSPredicate.init(format: "SELF MATCHES %@", password)
         return regexPassword.evaluate(with: self)
     }
+
+    func verifyUsername() -> Bool {
+        let username = "^[\u{4E00}-\u{9FA5}A-Za-z0-9_]{2,32}$"
+        let regexUsername = NSPredicate.init(format: "SELF MATCHES %@", username)
+        return regexUsername.evaluate(with: self)
+    }
     
 }

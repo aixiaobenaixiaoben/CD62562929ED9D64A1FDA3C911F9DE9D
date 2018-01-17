@@ -7,14 +7,68 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterInfoViewController: UIViewController {
     
+    @IBOutlet weak var suiusrnamField: UITextField!
+    @IBOutlet weak var suipaswrdField: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
+    
     var syusrinf: Syusrinf!
     
-    @IBAction func loadRegisterEndView(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-        let registerEndViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterEndViewController") as! RegisterEndViewController
-        self.present(registerEndViewController, animated: true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        registerButton.isEnabled = false
     }
+    
+    @IBAction func checkValid(_ sender: UITextField) {
+        if let suiusrnam = suiusrnamField.text, suiusrnam.verifyUsername(), let suipaswrd = suipaswrdField.text, suipaswrd.verifyPassword() {
+            registerButton.isEnabled = true
+        } else {
+            registerButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
+        suiusrnamField.resignFirstResponder()
+        suipaswrdField.resignFirstResponder()
+    }
+    
+    @IBAction func loadRegisterEndView(_ sender: UIButton) {
+        registerButton.isEnabled = false
+        syusrinf.suiusrnam = suiusrnamField.text?.trimmingCharacters(in: .whitespaces)
+        syusrinf.suipaswrd = suipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()
+        
+        Alamofire.request(SERVER + "user/register.action", method: .post, parameters: syusrinf.toJSON()).responseString {
+            response in
+            
+            if Response<String>.success(response) {
+                let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+                let registerEndViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterEndViewController") as! RegisterEndViewController
+                self.present(registerEndViewController, animated: true, completion: nil)
+                
+            } else if let error = Response<String>.error(response) {
+                print("Error: " + error)
+                let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
+                let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+            self.registerButton.isEnabled = true
+        }
+    }
+    
+    //TODO: - 服务条款页面
+    @IBAction func showPrivacyPolicy(_ sender: UIButton) {
+    }
+    
+    @IBAction func backToLogIn(_ sender: UIButton) {
+        var rootVC = self.presentingViewController!
+        while !rootVC.isKind(of: LoginViewController.self), let parent = rootVC.presentingViewController {
+            rootVC = parent
+        }
+        rootVC.dismiss(animated: true, completion: nil)
+    }
+    
 }

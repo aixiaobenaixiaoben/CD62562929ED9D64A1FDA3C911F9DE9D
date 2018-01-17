@@ -33,10 +33,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func textFieldDoneEditing(_ sender: UITextField) {
-        sender.resignFirstResponder()
-    }
-    
     @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
         suimobileField.resignFirstResponder()
         suipaswrdField.resignFirstResponder()

@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="wzc-FB-4PV" eventType="editingChanged" id="6lq-wm-3Gd"/>
-                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="vCD-TM-U3f"/>
+                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="wBX-wu-30n"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SMG-OG-9re">
@@ -51,7 +51,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="wzc-FB-4PV" eventType="editingChanged" id="Jzv-O6-3Nx"/>
-                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="Qhb-bs-OJJ"/>
+                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="KKu-0R-YPz"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-CJ-FyX">
@@ -120,12 +120,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0d9-8R-S0l">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0d9-8R-S0l">
                                 <rect key="frame" x="16" y="227" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="checkValid:" destination="o22-pc-du8" eventType="editingChanged" id="HAC-SY-Yly"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seq-ME-Bcb">
                                 <rect key="frame" x="16" y="378.5" width="343" height="30"/>
@@ -150,6 +153,9 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Already have an account?"/>
+                                <connections>
+                                    <action selector="backToLogIn:" destination="o22-pc-du8" eventType="touchUpInside" id="X9b-Vg-9sn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnB-c3-cT3">
                                 <rect key="frame" x="16" y="453" width="343" height="30"/>
@@ -167,10 +173,23 @@ and can opt out at any time</string>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="P2C-au-AGq"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kQS-RA-MQU" appends="YES" id="GVj-Ef-R60"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="sendVerifyButton" destination="seq-ME-Bcb" id="iSe-AP-jEg"/>
+                        <outlet property="suimobileField" destination="0d9-8R-S0l" id="grZ-wg-Q3S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whY-q3-bS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kQS-RA-MQU">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="o22-pc-du8" id="GbP-ey-1Ws"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1397.5999999999999" y="120.98950524737631"/>
         </scene>
@@ -187,6 +206,9 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="Kgg-xB-mH2" eventType="touchUpInside" id="KTj-Bx-Lzl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-HH-DF0">
                                 <rect key="frame" x="16" y="378.5" width="343" height="30"/>
@@ -197,12 +219,15 @@ and can opt out at any time</string>
                                     <action selector="loadRegisterInfoView:" destination="Kgg-xB-mH2" eventType="touchUpInside" id="dVs-va-ziq"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6-digit code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fsw-GJ-Hrb">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6-digit code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fsw-GJ-Hrb">
                                 <rect key="frame" x="16" y="226" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="checkValid:" destination="Kgg-xB-mH2" eventType="editingChanged" id="ASE-yI-4ln"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Confirmation Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Oq-7D4">
                                 <rect key="frame" x="16" y="167" width="343" height="21"/>
@@ -238,13 +263,29 @@ and can opt out at any time</string>
                                 <rect key="frame" x="120" y="313" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Request a new one."/>
+                                <connections>
+                                    <action selector="resendVerifyCode:" destination="Kgg-xB-mH2" eventType="touchUpInside" id="uI5-dR-yQW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="XK1-ls-Tsb"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZSK-S6-TYm" appends="YES" id="o6q-bh-IfB"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="svmvrycodField" destination="fsw-GJ-Hrb" id="hNS-YW-zk6"/>
+                        <outlet property="verifyButton" destination="PwB-HH-DF0" id="tPK-Ov-Inm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsL-hk-vQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZSK-S6-TYm">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="Kgg-xB-mH2" id="W5y-Qx-d2o"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2034.4000000000001" y="120.98950524737631"/>
         </scene>
@@ -261,6 +302,9 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Already have an account?"/>
+                                <connections>
+                                    <action selector="backToLogIn:" destination="qxV-4X-kAH" eventType="touchUpInside" id="PZh-rK-cWK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMT-mG-hOA">
                                 <rect key="frame" x="16" y="379" width="343" height="30"/>
@@ -271,12 +315,16 @@ and can opt out at any time</string>
                                     <action selector="loadRegisterEndView:" destination="qxV-4X-kAH" eventType="touchUpInside" id="h6d-z3-Pye"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-tg-abV">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-tg-abV">
                                 <rect key="frame" x="16" y="225" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="checkValid:" destination="qxV-4X-kAH" eventType="editingChanged" id="BZe-6q-tF9"/>
+                                    <action selector="textFieldDoneEditing:" destination="qxV-4X-kAH" eventType="editingDidEndOnExit" id="lCj-5K-dE6"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name and Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-qN-UJD">
                                 <rect key="frame" x="16" y="166" width="343" height="21"/>
@@ -299,12 +347,16 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.10271297090000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3u7-v3-SoH">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3u7-v3-SoH">
                                 <rect key="frame" x="16" y="263" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="checkValid:" destination="qxV-4X-kAH" eventType="editingChanged" id="Tx3-iU-Co9"/>
+                                    <action selector="textFieldDoneEditing:" destination="qxV-4X-kAH" eventType="editingDidEndOnExit" id="1rA-NL-i7a"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-Zg-tax">
                                 <rect key="frame" x="16" y="301" width="343" height="21"/>
@@ -319,13 +371,30 @@ and can opt out at any time</string>
                                 <rect key="frame" x="108" y="330" width="159" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Terms &amp; Privacy Policy."/>
+                                <connections>
+                                    <action selector="showPrivacyPolicy:" destination="qxV-4X-kAH" eventType="touchUpInside" id="tiN-6b-ig4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="agc-93-P19"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="02e-qI-SBu" appends="YES" id="BKx-An-IFg"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="registerButton" destination="ZMT-mG-hOA" id="2av-7h-znm"/>
+                        <outlet property="suipaswrdField" destination="3u7-v3-SoH" id="YFH-sC-St0"/>
+                        <outlet property="suiusrnamField" destination="bG5-tg-abV" id="auU-Wi-ZCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itw-kn-zwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="02e-qI-SBu">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="qxV-4X-kAH" id="q2a-Mo-VRw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2661.5999999999999" y="120.98950524737631"/>
         </scene>
@@ -342,6 +411,9 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Go To Log In"/>
+                                <connections>
+                                    <action selector="backToLogIn:" destination="OHJ-Aa-e9o" eventType="touchUpInside" id="Nll-MR-PRu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have created an account successfully." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFw-56-Akf">
                                 <rect key="frame" x="16" y="323" width="343" height="21"/>
@@ -589,6 +661,9 @@ and can opt out at any time</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Go To Log In"/>
+                                <connections>
+                                    <action selector="backToLogIn:" destination="67b-Up-UEX" eventType="touchUpInside" id="hHL-ci-uvH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have reset your password successfully." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-gI-r9p">
                                 <rect key="frame" x="16" y="323" width="343" height="21"/>

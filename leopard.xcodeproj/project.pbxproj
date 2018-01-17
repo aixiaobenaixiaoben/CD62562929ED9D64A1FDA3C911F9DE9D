@@ -25,6 +25,8 @@
 		0A3C250520048E7B00CD6FD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C250320048E7B00CD6FD0 /* LaunchScreen.storyboard */; };
 		0A3C251020048E7B00CD6FD0 /* leopardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C250F20048E7B00CD6FD0 /* leopardTests.swift */; };
 		0A3C251B20048E7B00CD6FD0 /* leopardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C251A20048E7B00CD6FD0 /* leopardUITests.swift */; };
+		0A4C8CB8200F3588002EFD52 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C8CB7200F3588002EFD52 /* ExtensionUIViewController.swift */; };
+		0A4C8CBA200F572D002EFD52 /* Syvrymbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C8CB9200F572D002EFD52 /* Syvrymbl.swift */; };
 		0A4E3E92200B616400D1B685 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E3E91200B616400D1B685 /* Login.storyboard */; };
 		0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9D200B671A00D1B685 /* AViewController.swift */; };
 		0A4E3EA0200B67FA00D1B685 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3E9F200B67FA00D1B685 /* BViewController.swift */; };
@@ -97,6 +99,8 @@
 		0A3C251620048E7B00CD6FD0 /* leopardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leopardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3C251A20048E7B00CD6FD0 /* leopardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leopardUITests.swift; sourceTree = "<group>"; };
 		0A3C251C20048E7B00CD6FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A4C8CB7200F3588002EFD52 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
+		0A4C8CB9200F572D002EFD52 /* Syvrymbl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syvrymbl.swift; sourceTree = "<group>"; };
 		0A4E3E91200B616400D1B685 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0A4E3E9D200B671A00D1B685 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		0A4E3E9F200B67FA00D1B685 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				0A202008200E3F2A009941EF /* leopard-Bridging-Header.h */,
 				0A20200D200E4368009941EF /* ExtensionString.swift */,
 				0A20200F200E43DC009941EF /* ExtensionArray.swift */,
+				0A4C8CB7200F3588002EFD52 /* ExtensionUIViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				0ADAE3682005D1AF006CB2DE /* Syusrinf.swift */,
+				0A4C8CB9200F572D002EFD52 /* Syvrymbl.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -533,9 +539,11 @@
 				0ADECD1F2008450300FFCA73 /* LoginViewController.swift in Sources */,
 				0A09D57D200CE767000C487E /* RegisterEndViewController.swift in Sources */,
 				0ADAE3692005D1AF006CB2DE /* Syusrinf.swift in Sources */,
+				0A4C8CBA200F572D002EFD52 /* Syvrymbl.swift in Sources */,
 				0A202010200E43DC009941EF /* ExtensionArray.swift in Sources */,
 				0A4E3E9E200B671A00D1B685 /* AViewController.swift in Sources */,
 				0ADAE3672005B764006CB2DE /* Response.swift in Sources */,
+				0A4C8CB8200F3588002EFD52 /* ExtensionUIViewController.swift in Sources */,
 				0A09D581200CE79C000C487E /* ResetCodeViewController.swift in Sources */,
 				0A09D579200CE724000C487E /* RegisterCodeViewController.swift in Sources */,
 				0A20200E200E4368009941EF /* ExtensionString.swift in Sources */,
