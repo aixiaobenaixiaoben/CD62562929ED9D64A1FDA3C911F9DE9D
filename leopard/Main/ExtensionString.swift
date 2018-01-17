@@ -25,4 +25,16 @@ extension String: HandyJSON {
         return String(format: hash as String)
     }
     
+    func verifyDigit(len: Int) -> Bool {
+        let mobile = "^[0-9]{\(len)}$"
+        let regexMobile = NSPredicate.init(format: "SELF MATCHES %@", mobile)
+        return regexMobile.evaluate(with: self)
+    }
+
+    func verifyPassword() -> Bool {
+        let password = "^[A-Za-z0-9_]{8,14}$"
+        let regexPassword = NSPredicate.init(format: "SELF MATCHES %@", password)
+        return regexPassword.evaluate(with: self)
+    }
+    
 }

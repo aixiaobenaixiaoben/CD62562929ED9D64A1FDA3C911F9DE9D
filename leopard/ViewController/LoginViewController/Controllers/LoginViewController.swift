@@ -26,8 +26,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func checkValid(_ sender: UITextField) {
-        if let suimobile = suimobileField.text, !suimobile.trimmingCharacters(in: .whitespaces).isEmpty,
-            let suipaswrd = suipaswrdField.text, !suipaswrd.trimmingCharacters(in: .whitespaces).isEmpty {
+        if let suimobile = suimobileField.text, suimobile.verifyDigit(len: 11), let suipaswrd = suipaswrdField.text, suipaswrd.verifyPassword() {
             loginButton.isEnabled = true
         } else {
             loginButton.isEnabled = false
@@ -44,6 +43,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
+        loginButton.isEnabled = false
         syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         syusrinf.suipaswrd = suipaswrdField.text?.trimmingCharacters(in: .whitespaces).md5().uppercased()
@@ -62,7 +62,9 @@ class LoginViewController: UIViewController {
                 let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
                 let action = UIAlertAction(title: "Done", style: .default, handler: nil)
                 alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: {
+                    self.loginButton.isEnabled = true
+                })
             }
         }
     }
