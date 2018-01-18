@@ -43,4 +43,10 @@ extension String: HandyJSON {
         return regexUsername.evaluate(with: self)
     }
     
+    func pregReplace(pattern: String, with: String, options: NSRegularExpression.Options = []) -> String {
+        let regex = try! NSRegularExpression(pattern: pattern, options: options)
+        let range = NSMakeRange(0, self.count)
+        return regex.stringByReplacingMatches(in: self, options: [], range: range, withTemplate: with)
+    }
+    
 }

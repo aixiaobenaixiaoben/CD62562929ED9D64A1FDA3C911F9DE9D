@@ -20,6 +20,8 @@ class RegisterInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerButton.isEnabled = false
+        suiusrnamField.delegate = self
+        suipaswrdField.delegate = self
     }
     
     @IBAction func checkValid(_ sender: UITextField) {
@@ -28,6 +30,10 @@ class RegisterInfoViewController: UIViewController {
         } else {
             registerButton.isEnabled = false
         }
+    }
+    
+    @IBAction func textFieldDoneEditing(_ sender: UITextField) {
+        sender.resignFirstResponder()
     }
     
     @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {

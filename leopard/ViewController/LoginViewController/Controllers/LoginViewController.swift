@@ -23,6 +23,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginButton.isEnabled = false
+        suimobileField.delegate = self
+        suipaswrdField.delegate = self
     }
     
     @IBAction func checkValid(_ sender: UITextField) {
@@ -31,6 +33,10 @@ class LoginViewController: UIViewController {
         } else {
             loginButton.isEnabled = false
         }
+    }
+    
+    @IBAction func textFieldDoneEditing(_ sender: UITextField) {
+        sender.resignFirstResponder()
     }
     
     @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {

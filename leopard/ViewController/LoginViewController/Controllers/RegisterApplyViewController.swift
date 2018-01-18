@@ -20,6 +20,7 @@ class RegisterApplyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sendVerifyButton.isEnabled = false
+        suimobileField.delegate = self
     }
     
     @IBAction func checkValid(_ sender: UITextField) {

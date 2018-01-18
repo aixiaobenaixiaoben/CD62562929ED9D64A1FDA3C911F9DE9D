@@ -20,6 +20,7 @@ class RegisterCodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         verifyButton.isEnabled = false
+        svmvrycodField.delegate = self
     }
 
     @IBAction func checkValid(_ sender: UITextField) {

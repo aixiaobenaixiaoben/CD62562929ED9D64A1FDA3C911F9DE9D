@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="wzc-FB-4PV" eventType="editingChanged" id="6lq-wm-3Gd"/>
-                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="wBX-wu-30n"/>
+                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="M3J-Nj-noh"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SMG-OG-9re">
@@ -51,7 +51,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="wzc-FB-4PV" eventType="editingChanged" id="Jzv-O6-3Nx"/>
-                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="KKu-0R-YPz"/>
+                                    <action selector="textFieldDoneEditing:" destination="wzc-FB-4PV" eventType="editingDidEndOnExit" id="5ZS-pc-xLP"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-CJ-FyX">
@@ -323,7 +323,7 @@ and can opt out at any time</string>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="qxV-4X-kAH" eventType="editingChanged" id="BZe-6q-tF9"/>
-                                    <action selector="textFieldDoneEditing:" destination="qxV-4X-kAH" eventType="editingDidEndOnExit" id="lCj-5K-dE6"/>
+                                    <action selector="textFieldDoneEditing:" destination="qxV-4X-kAH" eventType="editingDidEndOnExit" id="J4z-Ef-rd8"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name and Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-qN-UJD">
@@ -355,7 +355,7 @@ and can opt out at any time</string>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="checkValid:" destination="qxV-4X-kAH" eventType="editingChanged" id="Tx3-iU-Co9"/>
-                                    <action selector="textFieldDoneEditing:" destination="qxV-4X-kAH" eventType="editingDidEndOnExit" id="1rA-NL-i7a"/>
+                                    <action selector="textFieldDoneEditing:" destination="qxV-4X-kAH" eventType="editingDidEndOnExit" id="Asd-bO-qyP"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-Zg-tax">
