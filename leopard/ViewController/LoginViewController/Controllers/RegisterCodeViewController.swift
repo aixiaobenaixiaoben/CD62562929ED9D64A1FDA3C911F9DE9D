@@ -53,7 +53,7 @@ class RegisterCodeViewController: UIViewController {
             } else if let error = Response<String>.error(response) {
                 print("Error: " + error)
                 let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
             }
@@ -67,15 +67,15 @@ class RegisterCodeViewController: UIViewController {
             
             if Response<String>.success(response) {
                 //TODO: - 提示已经发送验证码，10分钟后过期
-                let alert = UIAlertController(title: nil, message: "resend verify code successfully", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+                let alert = UIAlertController(title: nil, message: "Resend verify code successfully, the code will expire after 10 minutes", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {
                 print("Error: " + error)
                 let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
             }

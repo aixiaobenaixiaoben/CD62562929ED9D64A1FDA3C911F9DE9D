@@ -57,7 +57,7 @@ class RegisterInfoViewController: UIViewController {
             } else if let error = Response<String>.error(response) {
                 print("Error: " + error)
                 let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
             }
@@ -67,6 +67,9 @@ class RegisterInfoViewController: UIViewController {
     
     //TODO: - 服务条款页面
     @IBAction func showPrivacyPolicy(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+        let termsPrivacyViewController = storyBoard.instantiateViewController(withIdentifier: "TermsPrivacyViewController") as! TermsPrivacyViewController
+        self.present(termsPrivacyViewController, animated: true, completion: nil)
     }
     
     @IBAction func backToLogIn(_ sender: UIButton) {

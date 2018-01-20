@@ -16,7 +16,6 @@ class RegisterApplyViewController: UIViewController {
     
     var syusrinf: Syusrinf!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         sendVerifyButton.isEnabled = false
@@ -52,7 +51,7 @@ class RegisterApplyViewController: UIViewController {
             } else if let error = Response<String>.error(response) {
                 print("Error: " + error)
                 let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-                let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
             }
