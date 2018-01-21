@@ -65,7 +65,6 @@ class RegisterInfoViewController: UIViewController {
         }
     }
     
-    //TODO: - 服务条款页面
     @IBAction func showPrivacyPolicy(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
         let termsPrivacyViewController = storyBoard.instantiateViewController(withIdentifier: "TermsPrivacyViewController") as! TermsPrivacyViewController

@@ -11,6 +11,7 @@ import Alamofire
 
 class ResetCodeViewController: UIViewController {
     
+    @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var svmvrycodField: UITextField!
     @IBOutlet weak var verifyButton: UIButton!
     
@@ -21,6 +22,9 @@ class ResetCodeViewController: UIViewController {
         super.viewDidLoad()
         svmvrycodField.delegate = self
         verifyButton.isEnabled = false
+        if let tipsText = tipsLabel.text, let suimobile = syusrinf.suimobile {
+            tipsLabel.text = tipsText + suimobile + "."
+        }
     }
     
     @IBAction func checkValid(_ sender: UITextField) {
@@ -41,13 +45,13 @@ class ResetCodeViewController: UIViewController {
         syvrymbl.svmmobile = syusrinf.suimobile
         syvrymbl.svmvrycod = svmvrycodField.text?.trimmingCharacters(in: .whitespaces)
         
-        Alamofire.request(SERVER + "user/verifyResetCode.action", method: .post, parameters: syvrymbl.toJSON()).responseString {
+        Alamofire.request(SERVER + "user/resetVerifyCode.action", method: .post, parameters: syvrymbl.toJSON()).responseString {
             response in
             
-            if Response<String>.success(response) {
+            if let remoteSyusrinf = Response<Syusrinf>.data(response) {
                 let storyBoard = UIStoryboard(name: "Login", bundle: nil)
                 let resetInfoViewController = storyBoard.instantiateViewController(withIdentifier: "ResetInfoViewController") as! ResetInfoViewController
-                resetInfoViewController.syusrinf = self.syusrinf
+                resetInfoViewController.syusrinf = remoteSyusrinf
                 self.present(resetInfoViewController, animated: true, completion: nil)
                 
             } else if let error = Response<String>.error(response) {
@@ -62,7 +66,7 @@ class ResetCodeViewController: UIViewController {
     }
     
     @IBAction func resendResetVerifyCode(_ sender: UIButton) {
-        Alamofire.request(SERVER + "user/resendResetVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
+        Alamofire.request(SERVER + "user/sendResetVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
             response in
             
             if Response<String>.success(response) {

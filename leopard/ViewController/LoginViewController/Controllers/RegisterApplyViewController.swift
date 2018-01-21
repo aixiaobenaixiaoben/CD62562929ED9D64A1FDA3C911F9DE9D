@@ -39,7 +39,7 @@ class RegisterApplyViewController: UIViewController {
         syusrinf = Syusrinf()
         syusrinf.suimobile = suimobileField.text?.trimmingCharacters(in: .whitespaces)
         
-        Alamofire.request(SERVER + "user/sendVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
+        Alamofire.request(SERVER + "user/sendRegisterVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
             response in
             
             if Response<String>.success(response) {

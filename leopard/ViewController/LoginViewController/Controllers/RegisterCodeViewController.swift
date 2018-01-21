@@ -11,6 +11,7 @@ import Alamofire
 
 class RegisterCodeViewController: UIViewController {
     
+    @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var svmvrycodField: UITextField!
     @IBOutlet weak var verifyButton: UIButton!
     
@@ -21,6 +22,9 @@ class RegisterCodeViewController: UIViewController {
         super.viewDidLoad()
         verifyButton.isEnabled = false
         svmvrycodField.delegate = self
+        if let tipsText = tipsLabel.text, let suimobile = syusrinf.suimobile {
+            tipsLabel.text = tipsText + suimobile + "."
+        }
     }
 
     @IBAction func checkValid(_ sender: UITextField) {
@@ -41,7 +45,7 @@ class RegisterCodeViewController: UIViewController {
         syvrymbl.svmmobile = syusrinf.suimobile
         syvrymbl.svmvrycod = svmvrycodField.text?.trimmingCharacters(in: .whitespaces)
         
-        Alamofire.request(SERVER + "user/verifyCode.action", method: .post, parameters: syvrymbl.toJSON()).responseString {
+        Alamofire.request(SERVER + "user/registerVerifyCode.action", method: .post, parameters: syvrymbl.toJSON()).responseString {
             response in
             
             if Response<String>.success(response) {
@@ -62,12 +66,11 @@ class RegisterCodeViewController: UIViewController {
     }
     
     @IBAction func resendVerifyCode(_ sender: UIButton) {
-        Alamofire.request(SERVER + "user/resendVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
+        Alamofire.request(SERVER + "user/sendRegisterVerifyCode.action", method: .post, parameters: syusrinf.toJSON()).responseString {
             response in
             
             if Response<String>.success(response) {
-                //TODO: - 提示已经发送验证码，10分钟后过期
-                let alert = UIAlertController(title: nil, message: "Resend verify code successfully, the code will expire after 10 minutes", preferredStyle: .alert)
+                let alert = UIAlertController(title: nil, message: "Send verify code successfully, the code will expire after 10 minutes", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)

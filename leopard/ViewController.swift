@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         
+/**
         Alamofire.request(SERVER + "index/hello.action", method: .post).responseString {
             response in
             if let data = Response<String>.data(response) {
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
                 print("Error: " + error)
             }
         }
+ */
 
         
         super.viewDidLoad()
