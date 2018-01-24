@@ -9,8 +9,8 @@
 import Alamofire
 import HandyJSON
 
-//let SERVER = "https://forfreedomandlove.com/"
-let SERVER = "http://localhost:8080/"
+let SERVER = "https://forfreedomandlove.com/"
+//let SERVER = "http://localhost:8080/"
 
 class Response<T: HandyJSON>: HandyJSON {
 
